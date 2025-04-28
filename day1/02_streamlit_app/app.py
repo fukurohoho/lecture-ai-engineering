@@ -10,6 +10,8 @@ from transformers import pipeline
 from config import MODEL_NAME
 from huggingface_hub import HfFolder
 
+torch.classes.__path__ = []
+
 # --- アプリケーション設定 ---
 st.set_page_config(page_title="Gemma Chatbot", layout="wide")
 
@@ -78,4 +80,4 @@ elif st.session_state.page == "サンプルデータ管理":
 
 # --- フッターなど（任意） ---
 st.sidebar.markdown("---")
-st.sidebar.info("開発者: [Your Name]")
+st.sidebar.info("開発者: fukuro_hoho")

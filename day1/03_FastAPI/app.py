@@ -159,6 +159,7 @@ async def health_check():
 async def generate_simple(request: SimpleGenerationRequest):
     """単純なプロンプト入力に基づいてテキストを生成"""
     global model
+    print("model:: ", model)
 
     if model is None:
         print("generateエンドポイント: モデルが読み込まれていません。読み込みを試みます...")
@@ -169,6 +170,7 @@ async def generate_simple(request: SimpleGenerationRequest):
 
     try:
         start_time = time.time()
+        print("request:: ", request)
         print(f"シンプルなリクエストを受信: prompt={request.prompt[:100]}..., max_new_tokens={request.max_new_tokens}")  # 長いプロンプトは切り捨て
 
         # プロンプトテキストで直接応答を生成
