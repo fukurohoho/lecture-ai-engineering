@@ -30,7 +30,7 @@ jobs:
 
     - name: Run black
       run: |
-        run black .
+        black .
 
     - name: Commit changes
       uses: stefanzweifel/git-auto-commit-action@v4
