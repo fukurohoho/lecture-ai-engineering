@@ -11,9 +11,7 @@ import textwrap
 # ページ設定
 # ============================================
 st.set_page_config(
-    page_title="Streamlit デモ",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title="Streamlit デモ", layout="wide", initial_sidebar_state="expanded"
 )
 
 st.sidebar.header("ガイド")
@@ -42,17 +40,26 @@ with col1:
 
 with col2:
     # 画像の表示
-    st.markdown("""
+    st.markdown(
+        """
     <style>
     .big-font {
         width: 100%;
     }
     </style>
     <h3>パンのイメージ</h3>
-    """, unsafe_allow_html=True)
-    img = Image.open(io.BytesIO(requests.get("https://www.cotta.jp/images/201312/12011727_529af2d72d45b.jpg").content))
+    """,
+        unsafe_allow_html=True,
+    )
+    img = Image.open(
+        io.BytesIO(
+            requests.get(
+                "https://www.cotta.jp/images/201312/12011727_529af2d72d45b.jpg"
+            ).content
+        )
+    )
     st.image(img)
 
-opinion_box = st.text_input('意見があればなんでも書き込んでください')
+opinion_box = st.text_input("意見があればなんでも書き込んでください")
 if st.button("送信"):
     st.success("問題なく送信されました！")
