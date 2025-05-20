@@ -11,7 +11,7 @@ if "messages" not in st.session_state:
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
-        st.markdown(message["content"])
+    st.markdown(message["content"])
 
 # Accept user input
 if prompt := st.chat_input("What is up?"):
