@@ -181,8 +181,6 @@ def test_model_output_range(train_model):
     assert (
         y_pred.min() == 0 and y_pred.max() == 1
     ), "モデルの出力が0, 1以外に存在しています"
-
-
 def test_model_auc_score(train_model):
     """モデルのAUCが一定の基準を満たしているかを検証"""
     model, X_test, y_test = train_model
